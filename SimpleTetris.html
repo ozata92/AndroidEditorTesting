@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tetris Demo</title>
+    <style>
+        /* Basic styles for the game grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(10, 20px);
+            width: 200px;
+            border: 1px solid #000;
+        }
+        .cell {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #eee;
+        }
+        .filled {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid" id="gameGrid"></div>
+
+    <script>
+        // Basic game logic for a simple Tetris demo
+        const grid = document.getElementById("gameGrid");
+        const rows = 20;
+        const cols = 10;
+        let cells = Array(rows).fill().map(() => Array(cols).fill(false));
+
+        // Initialize the game grid
+        for (let i = 0; i < rows * cols; i++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            grid.appendChild(cell);
+        }
+
+        // Game loop
+        setInterval(() => {
+            // Move blocks down
+            for (let y = rows - 1; y >= 0; y--) {
+                for (let x = 0; x < cols
