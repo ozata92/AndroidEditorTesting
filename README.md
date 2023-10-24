@@ -1,0 +1,2 @@
+# AndroidEditorTesting
+AndroidとChatGPTを使ってどこまで 開発できるかを試す場所
